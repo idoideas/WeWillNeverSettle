@@ -1,7 +1,7 @@
 html {
     background-color: #eb0028;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     text-align: center;
     overflow-x: auto;
     overflow-y: auto;
@@ -11,6 +11,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    font-size: 25px;
 }
 #number {
     font-size: 100px;
