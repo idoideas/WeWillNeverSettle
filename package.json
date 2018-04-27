@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies":{
-  	"express":"*",
-    "http":"*",
+  "dependencies": {
+    "express": "*",
+    "fs": "*",
+    "http": "*",
+    "play-sound": "^1.1.2",
     "socket.io": "*",
-    "url":"*",
-    "fs":"*"
+    "url": "*",
+    "play-sound":"*"
   },
   "author": "",
   "license": "ISC"

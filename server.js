@@ -4,8 +4,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var url = require("url");
 fs = require('fs');
+var player = require('play-sound')(opts = {});
 
 var number = 0;
+var isMuted = false;
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
@@ -17,6 +19,14 @@ io.on('connection', function(socket){
     socket.on('add-number', function(msg){
         number++;
         io.emit('add-number', number);
+    });
+
+    socket.on("mute-unmute", function(msg){
+        isMuted = !isMuted;
+    });
+
+    socket.on("send-mute-state", function(msg){
+        isMuted = !isMuted;
     });
 });
 

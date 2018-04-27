@@ -11,16 +11,38 @@
         gtag('config', 'UA-118334649-1');
     </script>
 
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script>
+        var isMuted = false;
         var socket = io();
-        socket.emit('add-number', { for: 'everyone' });
+        socket.emit('add-number', { for: 'everyone', mute:isMuted});
         socket.on('add-number', function(msg){
             document.getElementById("number").innerHTML = msg;
+            if(!isMuted){
+                document.getElementById("sound").play();
+            }
         });
+
+        function muteUnmute(self){
+            isMuted = !isMuted;
+            var text;
+            if(isMuted){
+                text = "Unmute";
+            } else {
+                text = "Mute";
+            }
+            self.innerHTML = text;
+        }
     </script>
 
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -35,15 +57,17 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="body-itself">
-    <h1 id="title">OnePlus customers would have removed the notch</h1>
+<audio id="sound" src="audio/plus-one-sound.mp3"></audio>
+<a class="btn waves-effect waves-light red darken-1" id="mute-button" onclick="muteUnmute(this)">Mute</a>
+<div id="body-itself">
+    <p id="title">OnePlus customers would have removed the notch</p>
     <div>
         <p id="number"></p>
-        <h1 id="title2">times, if they could.</h1>
+        <p id="title2">times, if they could.</p>
     </div>
-    <h1 id="title3">Would you do it once,
+    <p id="title3">Would you do it once,
         <img src="/images/oneplus-logo-white.png" style="height: 20%; width:20%; "/>
-        ?</h1>
+        ?</p>
     </div>
     <div id="bottom-div">
         <img src="images/idoideas-signature-white.png" style="height: 15%; width: 15%;"/>
