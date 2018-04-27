@@ -1,0 +1,33 @@
+html {
+    background-color: #eb0028;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+#body-itself{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#number {
+    font-size: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+#title {
+    overflow: hidden;
+    white-space: nowrap;
+}
+#title2 {
+    display: inline-block;
+    vertical-align: middle;
+}
+#bottom-div{
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}

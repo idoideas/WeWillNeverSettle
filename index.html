@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+        var socket = io();
+        socket.emit('add-number', { for: 'everyone' });
+        socket.on('add-number', function(msg){
+            document.getElementById("number").innerHTML = msg;
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="body-itself">
+    <h1 id="title">OnePlus customers would have removed the notch</h1>
+    <div>
+        <p id="number">%NUM%</p>
+        <h1 id="title2">times, if they could.</h1>
+    </div>
+    <h1 id="title3">Would you do it once,
+        <img src="/images/oneplus-logo-white.png" style="height: 20%; width:20%; "/>
+        ?</h1>
+    </div>
+    <div id="bottom-div">
+        <img src="images/idoideas-signature-white.png" style="height: 15%; width: 15%;"/>
+        <br/>
+        <a href="https://github.com/idoideas">
+            <img src="images/GitHub-Mark-120px-plus.png" style="height: 2%; width: 2%;"/>
+        </a>
+        <a href="https://twitter.com/idoideas">
+            <img src="images/Twitter_Social_Icon_Circle_Color.png" style="height: 2%; width: 2%;"/>
+        </a>
+        <a href="https://reddit.com/u/idoideas">
+            <img src="images/Reddit_Mark_OnDark.png" style="height: 2%; width: 2%;"/>
+        </a>
+    </div>
+</body>
+</html>
