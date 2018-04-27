@@ -4,7 +4,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var url = require("url");
 fs = require('fs');
-var player = require('play-sound')(opts = {});
 
 var number = 0;
 var isMuted = false;

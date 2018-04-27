@@ -10,10 +10,8 @@
     "express": "*",
     "fs": "*",
     "http": "*",
-    "play-sound": "^1.1.2",
     "socket.io": "*",
-    "url": "*",
-    "play-sound":"*"
+    "url": "*"
   },
   "author": "",
   "license": "ISC"
