@@ -6,39 +6,102 @@ html {
     overflow-x: auto;
     overflow-y: auto;
 }
-#body-itself{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 50px;
+
+@media screen and (max-width:960px){
+
+
+    .site-redirect{
+        height:10%;
+        width:10%;
+    }
+    .signature{
+        height:60%;
+        width:60%;
+    }
+
+    #body-itself{
+        margin-top: 10%;
+        font-size: 25px;
+        width: 100%;
+    }
+    #mute-button{
+        display: none;
+    }
+    #oneplus-logo{
+        height: 40%;
+        width:40%;
+    }
+    #number {
+        font-size: 80px;
+    }
+    p
+    {
+        margin: 15px;
+        padding: 0;
+    }
+    #bottom-div{
+        margin-top: 10%;
+    }
+
 }
-#mute-button{
-    margin-top: 20px;
-    right: 20px;
-    position: fixed;
-}
-#number {
-    font-size: 100px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-#title {
-    overflow: hidden;
-    white-space: nowrap;
-}
-#title2 {
-    display: inline-block;
-    vertical-align: middle;
-}
-#bottom-div{
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-}
-p
-{
-    margin: 10px;
-    padding: 0;
+
+@media screen and (min-width: 960px) {
+
+
+    #body-itself{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 50px;
+    }
+    #mute-button{
+        margin-top: 20px;
+        right: 20px;
+        position: fixed;
+    }
+    #number {
+        font-size: 100px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    #title {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    #title2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    #bottom-div{
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+    }
+    p
+    {
+        margin: 10px;
+        padding: 0;
+    }
+    #break-onepluslogo{
+        display: none;
+    }
+
+    .site-redirect{
+        height:2%;
+        width:2%;
+    }
+    .signature{
+        height:2%;
+        width:2%;
+    }
+    .signature{
+        height:15%;
+        width:15%;
+    }
+    #oneplus-logo{
+        height: 20%;
+        width:20%;
+    }
 }
