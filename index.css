@@ -104,4 +104,8 @@ html {
         height: 20%;
         width:20%;
     }
+    #google-play-badge{
+        height: 100px;
+        width: 250px;
+    }
 }
