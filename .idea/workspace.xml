@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cbc0ea1c-434d-4608-b517-bd2587bb32cb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,11 +21,10 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="27" column="99" lean-forward="true" selection-start-line="27" selection-start-column="99" selection-end-line="27" selection-end-column="99" />
+            <state relative-caret-position="125">
+              <caret line="43" column="102" lean-forward="false" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
               <folding>
-                <element signature="e#1458#1501#0" expanded="false" />
-                <element signature="n#!!block;n#getDatabaseData#0" expanded="false" />
+                <element signature="e#1694#1737#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,8 +43,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+            <state relative-caret-position="124">
+              <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -87,6 +87,7 @@
     <findStrings>
       <find>io =</find>
       <find>play()</find>
+      <find>add</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,8 +97,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.css" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
@@ -230,7 +231,7 @@
       <workItem from="1524259034583" duration="1448000" />
       <workItem from="1524311400652" duration="1765000" />
       <workItem from="1524860601728" duration="12036000" />
-      <workItem from="1526077947734" duration="6434000" />
+      <workItem from="1526077947734" duration="7526000" />
     </task>
     <task id="LOCAL-00001" summary="Moved the count caching to Firebase">
       <created>1526245382572</created>
@@ -239,11 +240,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526245382572</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Moved the count caching to Firebase">
+      <created>1526245842796</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526245842796</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23292000" />
+    <option name="totallyTimeSpent" value="24384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -288,8 +296,7 @@
         <state relative-caret-position="330">
           <caret line="22" column="119" lean-forward="false" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
           <folding>
-            <element signature="e#1458#1501#0" expanded="false" />
-            <element signature="n#!!block;n#getDatabaseData#0" expanded="false" />
+            <element signature="e#1694#1737#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -325,8 +332,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1458#1501#0" expanded="false" />
-            <element signature="n#!!block;n#getDatabaseData#0" expanded="false" />
+            <element signature="e#1694#1737#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -352,8 +358,7 @@
         <state relative-caret-position="225">
           <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding>
-            <element signature="e#1458#1501#0" expanded="false" />
-            <element signature="n#!!block;n#getDatabaseData#0" expanded="false" />
+            <element signature="e#1694#1737#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -371,8 +376,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1458#1501#0" expanded="false" />
-            <element signature="n#!!block;n#getDatabaseData#0" expanded="false" />
+            <element signature="e#1694#1737#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -403,14 +407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth/abd411db7c30.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -419,13 +415,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="27" column="99" lean-forward="true" selection-start-line="27" selection-start-column="99" selection-end-line="27" selection-end-column="99" />
+        <state relative-caret-position="125">
+          <caret line="43" column="102" lean-forward="false" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
           <folding>
-            <element signature="e#1458#1501#0" expanded="false" />
-            <element signature="n#!!block;n#getDatabaseData#0" expanded="false" />
+            <element signature="e#1694#1737#0" expanded="false" />
           </folding>
         </state>
       </provider>

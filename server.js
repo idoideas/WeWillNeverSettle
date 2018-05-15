@@ -40,6 +40,12 @@ io.on('connection', function(socket){
         getDatabaseData(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
     });
 
+    socket.on('set-number', function(){
+        getDatabaseData(db.collection("main-documents").doc("main-counter"), function (dbQuery, doc) {
+            io.emit('set-number', doc._fieldsProto.count.integerValue);
+        });
+    });
+
     socket.on("mute-unmute", function(msg){
         isMuted = !isMuted;
     });
@@ -75,10 +81,7 @@ function updateNumberCallback(dbQuery, doc){
 
 function updateDocumentLive(dbQuery, callbackFunc){
     var observer = dbQuery.onSnapshot(docSnapshot => {
-        //console.log(docSnapshot._fieldsProto);
         callbackFunc(docSnapshot._fieldsProto);
-    //console.log(`Received doc snapshot: ${docSnapshot._fieldsProto.born.integerValue}`);
-// ...
 }, err => {
         console.log(`Encountered error: ${err}`);
     });

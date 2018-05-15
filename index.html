@@ -26,12 +26,16 @@
     <script>
         var isMuted = false;
         var socket = io();
-        socket.emit('add-number', { for: 'everyone', mute:isMuted});
+        socket.emit('set-number', { for: 'everyone', mute:isMuted});
         socket.on('add-number', function(msg){
             document.getElementById("number").innerHTML = msg;
             if(!isMuted){
                 document.getElementById("sound").play();
             }
+        });
+
+        socket.on('set-number', function(msg){
+            document.getElementById("number").innerHTML = msg;
         });
 
         function muteUnmute(self){
