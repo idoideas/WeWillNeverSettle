@@ -42,6 +42,10 @@ html {
     #bottom-div{
         margin-top: 10%;
     }
+    #google-play-badge{
+        height: 100px;
+        width: 250px;
+    }
 
 }
 
