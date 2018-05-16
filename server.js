@@ -22,7 +22,7 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/counterRequest', function(req, res){
+app.post('/counterRequest', function(req, res){
     if(req.headers["seed"]==="confirmed"){
         getDatabaseData(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
         getDatabaseData(db.collection("users-clicks-documents").doc(req.body["username"]), updateNumberCallback);
