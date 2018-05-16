@@ -128,7 +128,7 @@ function getTableLeadersRegularSnap(docSnap){
 }
 
 function addNewUser(username, email){
-    db.collection("main-documents").doc(username).set({
+    db.collection("users-clicks-documents").doc(username).set({
         username: username,
         email: email,
         count: 0

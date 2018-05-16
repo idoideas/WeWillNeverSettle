@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbc0ea1c-434d-4608-b517-bd2587bb32cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.css" afterPath="$PROJECT_DIR$/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,8 +20,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="39" column="54" lean-forward="false" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+            <state relative-caret-position="272">
+              <caret line="130" column="41" lean-forward="false" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
               <folding>
                 <element signature="e#2371#2414#0" expanded="false" />
               </folding>
@@ -239,7 +236,7 @@
       <workItem from="1524311400652" duration="1765000" />
       <workItem from="1524860601728" duration="12036000" />
       <workItem from="1526077947734" duration="23852000" />
-      <workItem from="1526487242045" duration="244000" />
+      <workItem from="1526487242045" duration="816000" />
     </task>
     <task id="LOCAL-00001" summary="Moved the count caching to Firebase">
       <created>1526245382572</created>
@@ -339,11 +336,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526470879402</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Adding Tabs, and new user request.">
+      <created>1526487520334</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1526487520334</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40954000" />
+    <option name="totallyTimeSpent" value="41526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -385,7 +389,8 @@
     <MESSAGE value="added favicon" />
     <MESSAGE value="checking post" />
     <MESSAGE value="Fixing the username counter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing the username counter" />
+    <MESSAGE value="Adding Tabs, and new user request." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Tabs, and new user request." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -592,8 +597,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="39" column="54" lean-forward="false" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+        <state relative-caret-position="272">
+          <caret line="130" column="41" lean-forward="false" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
           <folding>
             <element signature="e#2371#2414#0" expanded="false" />
           </folding>
