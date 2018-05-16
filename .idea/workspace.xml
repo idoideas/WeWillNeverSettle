@@ -74,8 +74,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="50" column="23" lean-forward="false" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state relative-caret-position="168">
+              <caret line="46" column="18" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -238,7 +238,7 @@
       <workItem from="1524311400652" duration="1765000" />
       <workItem from="1524860601728" duration="12036000" />
       <workItem from="1526077947734" duration="23852000" />
-      <workItem from="1526487242045" duration="2692000" />
+      <workItem from="1526487242045" duration="2860000" />
     </task>
     <task id="LOCAL-00001" summary="Moved the count caching to Firebase">
       <created>1526245382572</created>
@@ -366,11 +366,25 @@
       <option name="project" value="LOCAL" />
       <updated>1526511300365</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixing tabs on mobile">
+      <created>1526513327058</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1526513327058</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fixing tabs on mobile">
+      <created>1526513415766</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1526513415766</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43402000" />
+    <option name="totallyTimeSpent" value="43570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -416,7 +430,8 @@
     <MESSAGE value="fixed a typo" />
     <MESSAGE value="added exists check" />
     <MESSAGE value="fixed exists check" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed exists check" />
+    <MESSAGE value="fixing tabs on mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing tabs on mobile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -625,8 +640,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="50" column="23" lean-forward="false" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state relative-caret-position="168">
+          <caret line="46" column="18" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
           <folding />
         </state>
       </provider>
