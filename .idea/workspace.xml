@@ -74,8 +74,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="46" column="18" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+            <state relative-caret-position="765">
+              <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -238,7 +238,7 @@
       <workItem from="1524311400652" duration="1765000" />
       <workItem from="1524860601728" duration="12036000" />
       <workItem from="1526077947734" duration="23852000" />
-      <workItem from="1526487242045" duration="2860000" />
+      <workItem from="1526487242045" duration="2946000" />
     </task>
     <task id="LOCAL-00001" summary="Moved the count caching to Firebase">
       <created>1526245382572</created>
@@ -380,11 +380,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526513415766</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixing tabs on mobile">
+      <created>1526513490124</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1526513490124</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43570000" />
+    <option name="totallyTimeSpent" value="43656000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -640,8 +647,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="46" column="18" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        <state relative-caret-position="765">
+          <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="17" />
           <folding />
         </state>
       </provider>
