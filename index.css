@@ -42,7 +42,7 @@ html {
     #bottom-div{
 
     }
-    #google-play-badge{
+    #google-play-badge, #google-play-link{
         height: 100px;
         width: 250px;
     }
@@ -54,7 +54,7 @@ html {
 
     #body-itself{
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         font-size: 50px;
@@ -108,8 +108,58 @@ html {
         height: 20%;
         width:20%;
     }
-    #google-play-badge{
+    #google-play-badge, #google-play-link{
         height: 100px;
         width: 250px;
     }
+
+    #leaderboard-screen{
+        font-size: 30px;
+    }
+}
+
+th, td{
+    padding: 20px;
+}
+
+/* Style the tab */
+.tab {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    margin: 10px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #dddddd55;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    text-decoration: underline;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

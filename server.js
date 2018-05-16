@@ -26,8 +26,18 @@ app.get('/', function(req, res){
 
 app.post('/counterRequest', function(req, res){
     if(req.headers["seed"]==="confirmed"){
-        getDatabaseData(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
-        getDatabaseData(db.collection("users-clicks-documents").doc(req.body.username), updateNumberCallback);
+        getDatabaseDocument(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
+        getDatabaseDocument(db.collection("users-clicks-documents").doc(req.body.username), updateNumberCallback);
+        res.send("Thanks for never settling!")
+    } else {
+        res.send("I appericate the try. However, this project doesn't support non-clean requests. Please don't do that.")
+    }
+
+});
+
+app.post('/newUserRequest', function(req, res){
+    if(req.headers["seed"]==="confirmed"){
+        addNewUser(req.body.username, req.body.email);
         res.send("Thanks for never settling!")
     } else {
         res.send("I appericate the try. However, this project doesn't support non-clean requests. Please don't do that.")
@@ -39,13 +49,17 @@ app.use('/', express.static(__dirname + '/'));
 
 io.on('connection', function(socket){
     socket.on('add-number', function(){
-        getDatabaseData(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
+        getDatabaseDocument(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
     });
 
     socket.on('set-number', function(){
-        getDatabaseData(db.collection("main-documents").doc("main-counter"), function (dbQuery, doc) {
+        getDatabaseDocument(db.collection("main-documents").doc("main-counter"), function (dbQuery, doc) {
             io.emit('set-number', doc._fieldsProto.count.integerValue);
         });
+    });
+
+    socket.on('update-table', function(){
+        getDatabaseSnapshots(db.collection("users-clicks-documents").orderBy("count", 'desc').limit(5), getTableLeadersRegularSnap);
     });
 
     socket.on("mute-unmute", function(msg){
@@ -61,7 +75,7 @@ http.listen(process.env.PORT || 8080, function(){
     console.log('listening on *:8080');
 });
 
-function getDatabaseData(dbQuery, callback){
+function getDatabaseDocument(dbQuery, callback){
     dbQuery.get()
         .then(doc => {
         if (!doc.exists) {
@@ -75,15 +89,55 @@ function getDatabaseData(dbQuery, callback){
     });
 }
 
+function getDatabaseSnapshots(dbQuery, callbackFunc){
+    dbQuery.get()
+        .then(snapshot => {
+            var dict = {};
+        snapshot.forEach(doc => {
+        dict[doc.id] = doc.data();});
+        callbackFunc(dict);
+})
+.catch(err => {
+        console.log('Error getting documents', err);
+});
+}
+
 function updateNumberCallback(dbQuery, doc){
     dbQuery.update({
         count: parseInt(doc._fieldsProto.count.integerValue)+1
     });
 }
 
+function getTableLeadersUpdateSnap(docSnap){
+    var dict = [];
+    var docs = docSnap._docs();
+    for(var i = 0; i<docs.length; i++){
+        var obj = docs[i]._fieldsProto;
+        dict.push({"username": obj["username"].stringValue, "count": obj["count"].integerValue});
+    }
+    io.emit('update-table', dict);
+}
+
+function getTableLeadersRegularSnap(docSnap){
+    var dict = [];
+    for(var key in docSnap){
+        var obj = docSnap[key];
+        dict.push({"username": obj["username"], "count": obj["count"]});
+    }
+    io.emit('update-table', dict);
+}
+
+function addNewUser(username, email){
+    db.collection("main-documents").doc(username).set({
+        username: username,
+        email: email,
+        count: 0
+    });
+}
+
 function updateDocumentLive(dbQuery, callbackFunc){
     var observer = dbQuery.onSnapshot(docSnapshot => {
-        callbackFunc(docSnapshot._fieldsProto);
+        callbackFunc(docSnapshot);
 }, err => {
         console.log(`Encountered error: ${err}`);
     });
@@ -91,6 +145,7 @@ function updateDocumentLive(dbQuery, callbackFunc){
 
 function documentsToUpdateLive(db){
     updateDocumentLive(db.collection("main-documents").doc("main-counter"), function(value){
-        io.emit('add-number', value.count.integerValue);
+        io.emit('add-number', value._fieldsProto.count.integerValue);
     });
+    updateDocumentLive(db.collection("users-clicks-documents").orderBy("count", 'desc').limit(5), getTableLeadersUpdateSnap)
 }

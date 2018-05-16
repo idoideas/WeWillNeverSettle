@@ -23,25 +23,15 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="index.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css" target="_top">
     <script>
         var isMuted = false;
         var socket = io();
 
-        function addCommas(nStr) {
-            nStr += '';
-            var x = nStr.split('.');
-            var x1 = x[0];
-            var x2 = x.length > 1 ? '.' + x[1] : '';
-            var rgx = /(\d+)(\d{3})/;
-            while (rgx.test(x1)) {
-                x1 = x1.replace(rgx, '$1' + ',' + '$2');
-            }
-            return x1 + x2;
-        }
-
         socket.emit('set-number', { for: 'everyone', mute:isMuted});
+        socket.emit('update-table', { for: 'everyone'});
         socket.on('add-number', function(msg){
             msg = msg.toLocaleString();
             document.getElementById("number").innerHTML = addCommas(msg);
@@ -54,16 +44,38 @@
             document.getElementById("number").innerHTML = addCommas(msg);
         });
 
-        function muteUnmute(self){
-            isMuted = !isMuted;
-            var text;
-            if(isMuted){
-                text = "Unmute";
-            } else {
-                text = "Mute";
+        socket.on('update-table', function(dict){
+            dict.sort(function(a,b) {
+                return b.count - a.count;
+            });
+            var table = document.getElementById("leaderboard-table");
+            table.innerHTML = "";
+
+            var titleRow = document.createElement("tr");
+            var usernameTitle = document.createElement("th");
+            usernameTitle.innerHTML = "Username";
+            var numberOfTitle = document.createElement("th");
+            numberOfTitle.innerHTML = "No. of Notch Removals";
+            titleRow.appendChild(usernameTitle);
+            titleRow.appendChild(numberOfTitle);
+            table.appendChild(titleRow);
+
+            for(var i in dict){
+                var row = document.createElement("tr");
+
+                var thisUsername = document.createElement("td");
+                thisUsername.innerHTML = dict[i]["username"];
+
+                var thisNoOf = document.createElement("td");
+                thisNoOf.innerHTML = dict[i]["count"];
+
+                row.appendChild(thisUsername);
+                row.appendChild(thisNoOf);
+
+                table.appendChild(row);
             }
-            self.innerHTML = text;
-        }
+        });
+
     </script>
 
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -80,20 +92,36 @@
 <body>
 <audio id="sound" src="audio/plus-one-sound.mp3"></audio>
 <a class="btn waves-effect waves-light red darken-1" id="mute-button" onclick="muteUnmute(this)">Mute</a>
-<div id="body-itself">
-    <p id="title">OnePlus customers would have removed the notch</p>
-    <div>
-        <p id="number"></p>
-        <p id="title2">times, if they could.</p>
-    </div>
-    <p id="title3">Would you do it once,<br id="break-onepluslogo"/>
-        <img id="oneplus-logo" src="/images/oneplus-logo-white.png"/>
-        ?</p>
-    <a href='https://play.google.com/store/apps/details?id=com.idoideas.sometimessettle&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-        <img id="google-play-badge" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-    </a>
-    <script src="https://donorbox.org/install-popup-button.js" type="text/javascript" defer></script>
-    <a class="dbox-donation-button" href="https://donorbox.org/wewillneversettle" style="background:#ff0000; color: #fff;text-decoration: none;font-family: Verdana,sans-serif;display: inline-block;font-size: 16px;padding: 13px 17px 13px 17px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; box-shadow: 0 1px 0 0 #b20000; text-shadow: 0 1px rgba(0, 0, 0, 0.3);" >Donate</a>
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'main-screen')" id="defaultOpen">Main</button>
+    <button class="tablinks" onclick="openCity(event, 'leaderboard-screen')">Leaderboard</button>
+    <button class="tablinks" onclick="openCity(event, 'about-screen')">About</button>
+    <button class="tablinks" onclick="openCity(event, 'faq-screen')">FAQ</button>
+</div>
+    <div id="body-itself">
+        <div id="main-screen" class="tabcontent">
+            <p id="title">OnePlus customers would have removed the notch</p>
+            <div>
+                <p id="number"></p>
+                <p id="title2">times, if they could.</p>
+            </div>
+            <p id="title3">Would you do it once,<br id="break-onepluslogo"/>
+                <img id="oneplus-logo" src="/images/oneplus-logo-white.png"/>
+                ?</p>
+                <div>
+                    <a id="google-play-link" href='https://play.google.com/store/apps/details?id=com.idoideas.sometimessettle&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                        <img id="google-play-badge" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
+                    </a>
+                </div>
+        </div>
+        <div id="leaderboard-screen" class="tabcontent">
+            <table id="leaderboard-table">
+                <tr>
+                    <th>Username</th>
+                    <th>No. of Notch Removals</th>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div id="bottom-div">
@@ -109,5 +137,8 @@
             <img class="site-redirect" src="images/Reddit_Mark_OnDark.png"/>
         </a>
     </div>
+<script>
+    document.getElementById("defaultOpen").click();
+</script>
 </body>
 </html>
