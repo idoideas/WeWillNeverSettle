@@ -61,7 +61,7 @@ html {
         outline: none;
         cursor: pointer;
         padding: 14px 16px;
-        margin: auto;
+        margin: 5px 5px;
         transition: 0.3s;
     }
 }
