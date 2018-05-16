@@ -6,7 +6,9 @@ var url = require("url");
 fs = require('fs');
 var bodyParser = require('body-parser');
 app.use( bodyParser.json() );
-
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 const admin = require('firebase-admin');
 var serviceAccount = require('./auth/abd411db7c30.json');
 admin.initializeApp({
@@ -25,8 +27,8 @@ app.get('/', function(req, res){
 app.post('/counterRequest', function(req, res){
     if(req.headers["seed"]==="confirmed"){
         getDatabaseData(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
-        getDatabaseData(db.collection("users-clicks-documents").doc(req.body["username"]), updateNumberCallback);
-        res.send("Thanks for never settling! " + req.body)
+        getDatabaseData(db.collection("users-clicks-documents").doc(req.body.username), updateNumberCallback);
+        res.send("Thanks for never settling!")
     } else {
         res.send("I appericate the try. However, this project doesn't support non-clean requests. Please don't do that.")
     }
@@ -74,7 +76,7 @@ function getDatabaseData(dbQuery, callback){
 }
 
 function updateNumberCallback(dbQuery, doc){
-    dbQuery.set({
+    dbQuery.update({
         count: parseInt(doc._fieldsProto.count.integerValue)+1
     });
 }

@@ -20,8 +20,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            <state relative-caret-position="158">
+              <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -219,7 +219,7 @@
       <workItem from="1524259034583" duration="1448000" />
       <workItem from="1524311400652" duration="1765000" />
       <workItem from="1524860601728" duration="12036000" />
-      <workItem from="1526077947734" duration="14467000" />
+      <workItem from="1526077947734" duration="15280000" />
     </task>
     <task id="LOCAL-00001" summary="Moved the count caching to Firebase">
       <created>1526245382572</created>
@@ -298,11 +298,25 @@
       <option name="project" value="LOCAL" />
       <updated>1526461841772</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added favicon">
+      <created>1526462251256</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1526462251256</updated>
+    </task>
+    <task id="LOCAL-00013" summary="checking post">
+      <created>1526470366775</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1526470366775</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31325000" />
+    <option name="totallyTimeSpent" value="32138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -342,7 +356,8 @@
     <MESSAGE value="Now big numbers are presented in the counter with commas." />
     <MESSAGE value="Adding username number counting." />
     <MESSAGE value="added favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="added favicon" />
+    <MESSAGE value="checking post" />
+    <option name="LAST_COMMIT_MESSAGE" value="checking post" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -481,8 +496,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        <state relative-caret-position="158">
+          <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
           <folding />
         </state>
       </provider>
