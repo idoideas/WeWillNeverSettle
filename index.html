@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css" target="_top">
     <script>
-        var isMuted = false;
+        var isMuted = true;
         var socket = io();
 
         socket.emit('set-number', { for: 'everyone', mute:isMuted});
@@ -93,10 +93,10 @@
 <audio id="sound" src="audio/plus-one-sound.mp3"></audio>
 <a class="btn waves-effect waves-light red darken-1" id="mute-button" onclick="muteUnmute(this)">Mute</a>
 <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'main-screen')" id="defaultOpen">Main</button>
-    <button class="tablinks" onclick="openCity(event, 'leaderboard-screen')">Leaderboard</button>
-    <button class="tablinks" onclick="openCity(event, 'about-screen')">About</button>
-    <button class="tablinks" onclick="openCity(event, 'faq-screen')">FAQ</button>
+    <button class="tablinks" onclick="openTab(event, 'main-screen')" id="defaultOpen">Main</button>
+    <button class="tablinks" onclick="openTab(event, 'leaderboard-screen')">Leaderboard</button>
+    <button class="tablinks" onclick="openTab(event, 'about-screen')">About</button>
+    <button class="tablinks" onclick="openTab(event, 'faq-screen')">FAQ</button>
 </div>
     <div id="body-itself">
         <div id="main-screen" class="tabcontent">
