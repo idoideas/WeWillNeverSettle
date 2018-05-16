@@ -116,6 +116,10 @@ html {
     #leaderboard-screen{
         font-size: 30px;
     }
+
+    #main-screen{
+        margin-top: 10%;
+    }
 }
 
 th, td{

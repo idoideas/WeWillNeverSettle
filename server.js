@@ -36,18 +36,18 @@ app.post('/counterRequest', function(req, res){
 });
 
 app.post('/newUserRequest', function(req, res){
-    if(!isUserExists(req.body.username)){
-        if(req.headers["seed"]==="confirmed"){
-            addNewUser(req.body.username, req.body.email);
-            res.send("Thanks for never settling!")
+    isUserExists(req.body.username, function(result){
+        if(!result){
+            if(req.headers["seed"]==="confirmed"){
+                addNewUser(req.body.username, req.body.email);
+                res.send("Thanks for never settling!")
+            } else {
+                res.send("I appericate the try. However, this project doesn't support non-clean requests. Please don't do that.")
+            }
         } else {
-            res.send("I appericate the try. However, this project doesn't support non-clean requests. Please don't do that.")
+            res.send("user-exists");
         }
-    } else {
-        res.send("user-exists");
-    }
-
-
+    });
 });
 
 app.use('/', express.static(__dirname + '/'));
@@ -140,18 +140,18 @@ function addNewUser(username, email){
     });
 }
 
-function isUserExists(username){
+function isUserExists(username, callback){
     db.collection("users-clicks-documents").doc(username).get()
         .then(doc => {
         if (!doc.exists) {
-            return false;
+            callback(false);
     } else {
-         return true;
+         callback(true);
     }
 })
 .catch(err => {
         console.log('Error getting document', err);
-        return true;
+        callback(true);
 });
 }
 
