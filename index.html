@@ -28,16 +28,30 @@
     <script>
         var isMuted = false;
         var socket = io();
+
+        function addCommas(nStr) {
+            nStr += '';
+            var x = nStr.split('.');
+            var x1 = x[0];
+            var x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            }
+            return x1 + x2;
+        }
+
         socket.emit('set-number', { for: 'everyone', mute:isMuted});
         socket.on('add-number', function(msg){
-            document.getElementById("number").innerHTML = msg;
+            msg = msg.toLocaleString();
+            document.getElementById("number").innerHTML = addCommas(msg);
             if(!isMuted){
                 document.getElementById("sound").play();
             }
         });
 
         socket.on('set-number', function(msg){
-            document.getElementById("number").innerHTML = msg;
+            document.getElementById("number").innerHTML = addCommas(msg);
         });
 
         function muteUnmute(self){
