@@ -47,8 +47,12 @@ html {
         width: 250px;
     }
 
-    .tab{
-        font-size:10px;
+    .tab {
+        position: absolute;
+        left: 5%;
+        top: 0%;
+        transform: translateX(-50%);
+        font-size: 10px;
     }
 }
 
@@ -123,6 +127,14 @@ html {
     #main-screen{
         margin-top: 10%;
     }
+
+    .tab {
+        position: absolute;
+        left: 50%;
+        top: 0%;
+        transform: translateX(-50%);
+        font-size: 20px;
+    }
 }
 
 th, td{
@@ -130,13 +142,7 @@ th, td{
 }
 
 /* Style the tab */
-.tab {
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    transform: translateX(-50%);
-    font-size: 20px;
-}
+
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
