@@ -36,12 +36,17 @@ app.post('/counterRequest', function(req, res){
 });
 
 app.post('/newUserRequest', function(req, res){
-    if(req.headers["seed"]==="confirmed"){
-        addNewUser(req.body.username, req.body.email);
-        res.send("Thanks for never settling!")
+    if(!isUserExists(req.body.username)){
+        if(req.headers["seed"]==="confirmed"){
+            addNewUser(req.body.username, req.body.email);
+            res.send("Thanks for never settling!")
+        } else {
+            res.send("I appericate the try. However, this project doesn't support non-clean requests. Please don't do that.")
+        }
     } else {
-        res.send("I appericate the try. However, this project doesn't support non-clean requests. Please don't do that.")
+        res.send("user-exists");
     }
+
 
 });
 
@@ -133,6 +138,21 @@ function addNewUser(username, email){
         email: email,
         count: 0
     });
+}
+
+function isUserExists(username){
+    db.collection("users-clicks-documents").doc(username).get()
+        .then(doc => {
+        if (!doc.exists) {
+            return false;
+    } else {
+         return true;
+    }
+})
+.catch(err => {
+        console.log('Error getting document', err);
+        return true;
+});
 }
 
 function updateDocumentLive(dbQuery, callbackFunc){
