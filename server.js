@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 const admin = require('firebase-admin');
-var serviceAccount = require('./auth/abd411db7c30.json');
+var serviceAccount = require('./');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
@@ -24,8 +24,8 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/counterRequest', function(req, res){
-    if(req.headers["seed"]==="confirmed"){
+app.post('/c', function(req, res){
+    if(req.headers["seed"]===""){
         getDatabaseDocument(db.collection("main-documents").doc("main-counter"), updateNumberCallback);
         getDatabaseDocument(db.collection("users-clicks-documents").doc(req.body.username), updateNumberCallback);
         res.send("Thanks for never settling!")
@@ -35,10 +35,10 @@ app.post('/counterRequest', function(req, res){
 
 });
 
-app.post('/newUserRequest', function(req, res){
+app.post('/n', function(req, res){
     isUserExists(req.body.username, function(result){
         if(!result){
-            if(req.headers["seed"]==="confirmed"){
+            if(req.headers["seed"]===""){
                 addNewUser(req.body.username, req.body.email);
                 res.send("Thanks for never settling!")
             } else {
